@@ -1,3 +1,4 @@
 # MotionSensor
-Application of motion sensors in Android devices
+Application of motion sensors in Android devices.
 
+Acceleration Sensor, Gravity Sensor.
