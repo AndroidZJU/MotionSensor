@@ -31,6 +31,7 @@ public class MainActivity extends Activity implements SensorEventListener{//å®žç
         super.onResume();
         mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_UI);
 
     }
 
@@ -59,6 +60,9 @@ public class MainActivity extends Activity implements SensorEventListener{//å®žç
                 gravity[1] = event.values[1];
                 gravity[2] = event.values[2];
 
+                break;
+            case Sensor.TYPE_PROXIMITY:
+                setTitle(String.valueOf(event.values[0]));
                 break;
         }
     }
